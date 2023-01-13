@@ -1,0 +1,22 @@
+
+
+.beerMap img{
+height: 150px;
+margin : 0px 20px
+}
+
+.beerMap{
+    line-height: 10px;
+}
+
+h1{
+    font-size: 30px;
+}
+
+h2{
+    font-size: 20px
+}
+
+p{
+    font-size: 15px
+}
