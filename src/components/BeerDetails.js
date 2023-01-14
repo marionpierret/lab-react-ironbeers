@@ -1,6 +1,8 @@
 import { useParams } from "react-router";
 import {useState, useEffect} from "react"
-import axios from 'axios'
+import axios from 'axios';
+import './BeerDetails.css';
+import NavBar from "./NavBar";
 
 
 const BeerDetails=()=>{
@@ -16,20 +18,31 @@ useEffect(() => {
 
 console.log(details)
 return(
-
-
+<>
+<NavBar/>
 
 <div className = "beerDetails">
 
-
 <img src={details.image_url} alt=""/>
-<h1>{details.name}</h1>
-<h4>{details.tagline}</h4>
-<h5>{details.first_brewed}</h5>
-<p>{details.attenuation_level}</p>
-<p>{details.description}</p>
-<p>{details.contributed_by}</p>
+<table>
+<tr>
+<td><h1>{details.name}</h1></td>
+<td><h2>{details.attenuation_level}</h2></td>
+</tr>
+<tr>
+  <td><h3>{details.tagline}</h3></td>
+  <td><h5>{details.first_brewed}</h5></td>
+</tr>
+<tr>
+  <td><h4>{details.description}</h4></td>
+</tr>
+<tr>
+  <td><p>{details.contributed_by}</p></td>
+</tr>
+</table>
+
 </div>
+</>
 )
 
 }

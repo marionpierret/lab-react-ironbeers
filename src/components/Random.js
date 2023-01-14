@@ -2,6 +2,8 @@
 import { Link } from "react-router-dom";
 import axios from 'axios'
 import {useEffect, useState} from 'react'
+import NavBar from "./NavBar";
+import './BeerDetails.css'
 
 const Random = () => {
 
@@ -15,26 +17,30 @@ useEffect(() => {
   }, [])
 
     return(
+
 <>
-<img 
-        src={random.image_url}
-        alt=''
-        className='detailImg'
-      />
+<NavBar/>
+<div className = "beerDetails">
 
-            <h1>{random.name}</h1>
-            <h4>{random.tagline}</h4>
+<img src={random.image_url} alt=""/>
+<table>
+<tr>
+<td><h1>{random.name}</h1></td>
+<td><h2>{random.attenuation_level}</h2></td>
+</tr>
+<tr>
+  <td><h3>{random.tagline}</h3></td>
+  <td><h5>{random.first_brewed}</h5></td>
+</tr>
+<tr>
+  <td><h4>{random.description}</h4></td>
+</tr>
+<tr>
+  <td><p>{random.contributed_by}</p></td>
+</tr>
+</table>
 
-
-
-            <h1>{random.attenuation_level}</h1>
-            <h5>{random.first_brewed}</h5>
-
-
-  
-        <p>{random.description}</p>
-        <p>{random.contributed_by}</p>
-
+</div>
 
 </>
     )
